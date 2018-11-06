@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} account manager {% endblock %}
+{% block content %}
+
+<h1>My account Manager</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Account Name</th>
+      <th scope="col">Debit/Credit</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Balance</th>
+      <th scope="col">Created</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for a in account  %}
+    <tr>
+
+      <td>{{ a.id }}</td>
+      <td>{{ a.purpose }}</td>
+      <td>{{ a.acc_type }}</td>
+      <td>{{ a.amount }}</td>
+      <td>{{ sum }}</td>
+      <td>{{ a.created }}</td>
+
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+
+
+{% endblock %}
